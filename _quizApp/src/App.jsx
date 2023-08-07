@@ -1,7 +1,6 @@
-/* eslint-disable no-unused-vars */
 import "./App.css"
 import { useState } from "react"
-import { Mainmenu } from "./components/Mainmenu"
+import { MainMenu } from "./components/MainMenu"
 import { Quiz } from "./components/Quiz"
 import { EndScreen } from "./components/EndScreen"
 import { QuizContext } from "./Helper/QuizContext"
@@ -16,7 +15,7 @@ function App() {
       <QuizContext.Provider
         value={{ gameState, setGameState, score, setScore }}
       >
-        {gameState === "menu" && <Mainmenu />}
+        {gameState === "menu" && <MainMenu />}
         {gameState === "quiz" && <Quiz />}
         {gameState === "end" && <EndScreen />}
       </QuizContext.Provider>
