@@ -20,6 +20,7 @@ export const Quiz = () => {
     }
     setGameState("end")
   }
+
   return (
     <div className="flex flex-col gap-4 bg-orange-400 p-12 max-w-xl rounded-3xl">
       <p className="text-4xl">{QuizQuestions[currQuestion].prompt}</p>
