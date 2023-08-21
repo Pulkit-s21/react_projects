@@ -17,7 +17,7 @@ export const data = [
     img: bookmark_site,
     title: "bookmark website",
     description:
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Qui, animi.",
+      "Challenge from FrontEndMentor where we make a mock website for Bookmark",
     code: "https://github.com/Pulkit-s21/Frontend-Mentor/tree/master/bookmark_landing",
     demo: "https://bookmark-landing-d5e4d4.netlify.app/",
   },

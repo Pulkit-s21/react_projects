@@ -12,7 +12,7 @@ export const ProjectCard = (props) => {
     >
       <img className="w-fit" src={props.img} alt="Project Image" />
       <div className="flex flex-col p-4 gap-2 text-center items-center">
-        <h1 className="capitalize text-2xl font-bold">
+        <h1 className="capitalize text-2xl font-bold font-Cabin">
           {props.title}
         </h1>
         <p className="max-w-[25ch] text-lg text-gray-500">
