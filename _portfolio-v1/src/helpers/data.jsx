@@ -118,5 +118,5 @@ export const data = [
       "Challenge from FrontEndMentor where we had to design a landing page for a webiste",
     code: "https://github.com/Pulkit-s21/Frontend-Mentor/tree/master/huddle-page",
     demo: "https://huddle-page-a6865e.netlify.app/",
-  }     
+  },
 ]
