@@ -1,9 +1,15 @@
 import { ProjectCard } from "../components/ProjectCard"
 import { data } from "../helpers/data"
+import { motion } from "framer-motion"
 
 export const Projects = () => {
   return (
-    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 p-4 justify-items-center">
+    <motion.div
+      className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 p-4 justify-items-center"
+      initial={{ width: 0 }}
+      animate={{ width: "100%" }}
+      exit={{ x: window.innerWidth, transition: { duration: 0.2 } }}
+    >
       {data.map((item, idx) => {
         return (
           <ProjectCard
@@ -17,6 +23,6 @@ export const Projects = () => {
           />
         )
       })}
-    </div>
+    </motion.div>
   )
 }

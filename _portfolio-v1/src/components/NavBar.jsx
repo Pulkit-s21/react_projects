@@ -11,7 +11,7 @@ export const NavBar = () => {
     setExpanded(false)
   },[location])
   return (
-    <div className="navbar bg-blue-900 text-white" id={expanded ? "open" : "close"}>
+    <nav className="navbar bg-blue-900 text-white" id={expanded ? "open" : "close"}>
       <div className="toggleButton">
         <button
           onClick={() => {
@@ -33,6 +33,6 @@ export const NavBar = () => {
           Experience
         </Link>
       </div>
-    </div>
+    </nav>
   )
 }

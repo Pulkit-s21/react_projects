@@ -6,14 +6,13 @@ export const Footer = () => {
       className="
     flex flex-col gap-8
     bg-blue-900
-    w-full
     justify-center
     items-center
-    p-6 pt-12
+    p-6
     "
     >
       <SocialIcons />
-      <p className="text-xl font-bold text-white">&copy; As of {new Date().getFullYear()}</p>
+      <p className="text-xl font-bold text-white">&copy; updated as of {new Date().getFullYear()}</p>
     </div>
   )
 }

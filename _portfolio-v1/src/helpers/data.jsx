@@ -18,6 +18,8 @@ export const data = [
     title: "bookmark website",
     description:
       "Challenge from FrontEndMentor where we make a mock website for Bookmark",
+    about:
+      "In the website, we have the feature to toggle the mode between light and dark mode for the user to adjust to their liking. The user's preference is stored in the browser using localStorage. The project is completely responsive.",
     code: "https://github.com/Pulkit-s21/Frontend-Mentor/tree/master/bookmark_landing",
     demo: "https://bookmark-landing-d5e4d4.netlify.app/",
   },
@@ -26,7 +28,12 @@ export const data = [
     img: url_shortner,
     title: "URL shortner",
     description:
-      "Challenge from FrontEndMentor. Working website to shorten the URL and having a button to copy the new url straight away",
+      "Challenge from FrontEndMentor. Working website to shorten the URL.",
+    about: `The project was made using vanilla HTML, CSS and JS. 
+      We have a navbar. Next is the hero section with short information about the website and a hero image. 
+      It is followed by the working and the main section of the project. 
+      In that we can paste any URL and use the shortenURL API to shorten it. 
+      It is then given to us with the option to either delete it with one click or copy it using navigtor.clipboard feature of JS. I have animated the site using to make content visible only on scroll.`,
     code: "https://github.com/Pulkit-s21/Frontend-Mentor/tree/master/url_shortner",
     demo: "https://url-shortner-fb6fb3.netlify.app/",
   },
@@ -50,13 +57,14 @@ export const data = [
   },
   {
     id: 5,
-    img: calculator,
-    title: "calculator",
+    img: quizzer,
+    title: "quizzer",
     description:
-      "Challenge from FrontEndMentor. Working calculator with THREE themes to select from",
-    code: "https://github.com/Pulkit-s21/Frontend-Mentor/tree/master/calculator_themes",
-    demo: "https://calculator-themes-06ca1e.netlify.app/",
+      "A basic quiz app made with entirely REACT that shows the score at the end using different hooks",
+    code: "https://github.com/Pulkit-s21/react_projects/tree/main/_quizApp",
+    demo: "https://quizzer-443b36.netlify.app/",
   },
+  
   {
     id: 6,
     img: tip_calculator,
@@ -94,12 +102,12 @@ export const data = [
   },
   {
     id: 10,
-    img: quizzer,
-    title: "quizzer",
+    img: calculator,
+    title: "calculator",
     description:
-      "A basic quiz app made with entirely REACT that shows the score at the end using different hooks",
-    code: "https://github.com/Pulkit-s21/react_projects/tree/main/_quizApp",
-    demo: "https://quizzer-443b36.netlify.app/",
+      "Challenge from FrontEndMentor. Working calculator with THREE themes to select from",
+    code: "https://github.com/Pulkit-s21/Frontend-Mentor/tree/master/calculator_themes",
+    demo: "https://calculator-themes-06ca1e.netlify.app/",
   },
   {
     id: 11,
