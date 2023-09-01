@@ -4,6 +4,7 @@ import js from '../assets/js.png'
 import tailwind from '../assets/tailwind.png'
 import react from '../assets/react.png'
 import node from '../assets/node.png'
+import figma from "../assets/figma.png"
 
 export const skillData = [
     {
@@ -35,5 +36,10 @@ export const skillData = [
         id: 6,
         img: node,
         skillName: "NodeJS"
+    },
+    {
+        id: 7,
+        img: figma,
+        skillName: "Figma"
     },
 ]
