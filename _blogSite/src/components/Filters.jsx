@@ -2,7 +2,7 @@
 import { data } from "../helpers/data"
 export const Filters = ({ filterCategories, filterItems, setItems }) => {
   return (
-    <div className="overflow-x-scroll flex gap-6 items-center p-4 bg-neutral-700">
+    <div className="overflow-x-scroll flex gap-6 items-center md:justify-center p-4 bg-neutral-700">
       <button
         className="bg-orange-500 capitalize text-white py-1 px-4 rounded-md md:text-lg lg:text-xl"
         onClick={() => setItems(data)}
@@ -11,7 +11,7 @@ export const Filters = ({ filterCategories, filterItems, setItems }) => {
       </button>
       {filterCategories.map((val, idx) => (
         <button
-          className="bg-orange-500 capitalize text-white py-1 px-4 rounded-md md:text-lg lg:text-xl"
+          className="bg-transparent hover:bg-orange-500 capitalize text-white py-1 px-6 rounded-md md:text-lg lg:text-xl"
           key={idx}
           onClick={() => filterItems(val)}
         >

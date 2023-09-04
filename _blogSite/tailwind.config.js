@@ -5,6 +5,7 @@ export default {
     extend: {
       fontFamily: {
         Montserrat: "Montserrat",
+        Borel: "Borel"
       },
     },
   },
