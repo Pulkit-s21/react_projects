@@ -12,7 +12,9 @@ export const Footer = () => {
     "
     >
       <SocialIcons />
-      <p className="text-xl font-bold text-white">&copy; updated as of {new Date().getFullYear()}</p>
+      <p className="text-xl font-bold text-white font-Cabin">
+        &copy; updated as of {new Date().getFullYear()}
+      </p>
     </div>
   )
 }
