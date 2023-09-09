@@ -5,7 +5,14 @@ export const SubHeading = () => {
     <div className="flex flex-col items-center gap-8">
       <h1 className="text-2xl md:text-3xl lg:text-5xl text-yellow-500">
         Hi there, My Name is{" "}
-        <RoughNotation type="circle" color="white" order={1} className="font-Cabin block">Pulkit Saxena</RoughNotation>
+        <RoughNotation
+          type="circle"
+          color="white"
+          order={1}
+          className="font-Cabin block"
+        >
+          Pulkit Saxena
+        </RoughNotation>
       </h1>
       <div className="text-lg md:text-xl lg:text-2xl max-w-lg lg:max-w-2xl tracking-wider leading-4">
         <RoughNotation
