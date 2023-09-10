@@ -10,9 +10,9 @@ export const Auth = () => {
     return <Navigate to="/expense-tracker" />
   }
   return (
-    <>
-      <h1>Sign in with Google Account</h1>
-      <button
+    <div className="flex flex-col gap-6 items-center justify-center min-h-screen text-center">
+      <h1 className="text-5xl tracking-wider leading-snug">Sign in with Google</h1>
+      <button className="text-2xl bg-blue-600 uppercase hover:scale-105 transition-all"
         onClick={async () => {
           const result = await signInWithPopup(auth, provider)
           const authInfo = {
@@ -27,6 +27,6 @@ export const Auth = () => {
       >
         Sign In
       </button>
-    </>
+    </div>
   )
 }

@@ -41,12 +41,12 @@ export const ExpenseTracker = () => {
   return (
     <div className="flex flex-col text-center gap-6 items-center py-6">
       <div className="flex flex-col gap-4">
-        <div className="flex gap-8">
-          <h1 className="">
+        <div className="flex flex-col gap-8 md:flex-row md:justify-center">
+          <h1 className="text-3xl lg:text-5xl">
             {" "}
             <span className="block">{name}&apos;s</span> Expense Tracker
           </h1>
-          <div className="flex flex-col gap-4 items-center">
+          <div className="grid grid-cols-1 gap-4 place-items-center">
             {profilePic && (
               <div>
                 <img
@@ -56,14 +56,16 @@ export const ExpenseTracker = () => {
                 />
               </div>
             )}
-            <button onClick={signUserOut}>Sign Out</button>
+            <button className="" onClick={signUserOut}>
+              Sign Out
+            </button>
           </div>
         </div>
-        <div className="grid grid-cols-3 py-4">
-          <div>
-            <h2 className="text-2xl">Your Balance</h2>
+        <div className="grid grid-cols-1 gap-4 md:grid-cols-3 py-4">
+          <div className="grid grid-cols-1 gap-2">
+            <h2 className="text-2xl">Balance</h2>
             {transactionTotal.balance < 0 ? (
-              <p className="text-3xl text-red-500">
+              <p className="text-2xl text-red-500">
                 &#8377; {transactionTotal.balance}
               </p>
             ) : (
@@ -72,15 +74,15 @@ export const ExpenseTracker = () => {
               </p>
             )}
           </div>
-          <div>
+          <div className="grid grid-cols-1 gap-2">
             <h2 className="text-2xl">Income</h2>
-            <p className="text-3xl text-green-500">
+            <p className="text-2xl text-green-500">
               &#8377; {transactionTotal.income}
             </p>
           </div>
-          <div>
+          <div className="grid grid-cols-1 gap-2">
             <h2 className="text-2xl">Expense</h2>
-            <p className="text-3xl text-red-500">
+            <p className="text-2xl text-red-500">
               &#8377; {transactionTotal.expense}
             </p>
           </div>
@@ -90,9 +92,9 @@ export const ExpenseTracker = () => {
           className="flex flex-col gap-4 justify-center items-center"
           onSubmit={onSubmit}
         >
-          <div className="flex gap-8 text-xl">
+          <div className="flex flex-col gap-8 text-xl">
             <input
-              className="p-2 rounded-lg outline-none border-2 border-transparent focus:border-green-300"
+              className="p-2 rounded-lg text-center outline-none border-2 border-transparent focus:border-green-300"
               type="text"
               name="description"
               placeholder="Description"
@@ -100,16 +102,17 @@ export const ExpenseTracker = () => {
               onChange={(e) => setDescription(e.target.value)}
             />
             <input
-              className="p-2 rounded-lg outline-none border-2 border-transparent focus:border-green-300"
+              className="p-2 rounded-lg text-center outline-none border-2 border-transparent focus:border-green-300"
               type="number"
+              min={0}
               name="amount"
               placeholder="Amount"
               required
               onChange={(e) => setTransactionAmount(e.target.value)}
             />
           </div>
-          <div className="flex gap-6">
-            <div>
+          <div className="flex gap-6 py-4">
+            <div className="flex">
               <input
                 type="radio"
                 name="expense"
@@ -119,13 +122,13 @@ export const ExpenseTracker = () => {
                 onChange={(e) => setTransactionType(e.target.value)}
               />
               <label
-                className="text-3xl ml-2 cursor-pointer transition-colors hover:text-red-500"
+                className="text-xl md:text-2xl lg:text-3xl ml-2 cursor-pointer transition-colors hover:text-red-500"
                 htmlFor="Expense"
               >
                 Expense
               </label>
             </div>
-            <div>
+            <div className="flex">
               <input
                 type="radio"
                 name="income"
@@ -135,7 +138,7 @@ export const ExpenseTracker = () => {
                 onChange={(e) => setTransactionType(e.target.value)}
               />
               <label
-                className="text-3xl ml-2 cursor-pointer transition-colors hover:text-green-500"
+                className="text-xl md:text-2xl lg:text-3xl ml-2 cursor-pointer transition-colors hover:text-green-500"
                 htmlFor="Income"
               >
                 Income
@@ -143,15 +146,20 @@ export const ExpenseTracker = () => {
             </div>
           </div>
 
-          <button className="bg-green-600 text-white" type="submit">
+          <button
+            className="bg-blue-600 text-lg text-white border-2 border-transparent hover:border-2 hover:border-blue-300"
+            type="submit"
+          >
             Add Transaction
           </button>
         </form>
       </div>
 
       <div className="">
-        <h1 className="pb-4">Transactions</h1>
-        <ul className="grid grid-cols-3 gap-6">
+        <h1 className="text-4xl text-blue-400 md:text-6xl pb-4">
+          Transactions
+        </h1>
+        <ul className="grid md:grid-cols-3 gap-8">
           {transactions.map((transaction) => {
             return (
               <li className="flex flex-col gap-2" key={transaction.id}>
