@@ -1,10 +1,10 @@
 import { useState } from "react"
-import { Data } from "../helpers/data"
 import { ProductCard } from "../components/ProductCard"
 import { FilterBtn } from "./../components/FilterBtn"
+import { Data } from "../helpers/Data"
 
 export const Shop = () => {
-  const [item, setItems] = useState(Data)
+  const [items, setItems] = useState(Data)
   const menuItems = [...new Set(Data.map((val) => val.category))]
 
   const filterItems = (cat) => {
@@ -23,7 +23,7 @@ export const Shop = () => {
       />
 
       <div className="grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 ">
-        <ProductCard item={item} />
+        <ProductCard items={items} />
       </div>
     </div>
   )

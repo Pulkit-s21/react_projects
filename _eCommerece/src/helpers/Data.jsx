@@ -23,7 +23,7 @@ export const Data = [
   },
   {
     id: 2,
-    title: "Apple Watch 3",
+    title: "Apple Watch 9",
     price: "89,999",
     category: "Watch",
     productImg: Apple_watch,
@@ -51,7 +51,7 @@ export const Data = [
   },
   {
     id: 6,
-    title: "Samsung S23",
+    title: "Samsung S23 Ultra",
     price: "1,29,999",
     category: "Mobile",
     productImg: Samsung_s23,
