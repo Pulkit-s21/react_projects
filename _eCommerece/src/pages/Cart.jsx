@@ -40,8 +40,11 @@ export const Cart = () => {
         <div className="flex flex-col items-center md:flex-row gap-2">
           <Link to="/">
             <button className="bg-blue-500 px-6 py-2 text-white rounded-lg">
-              {totalAmount ? (<p>Continue Shopping</p>) : (<p>Lets go shop</p>)}
-              
+              {totalAmount ? (
+                <h1>Continue Shopping</h1>
+              ) : (
+                <h1>Lets start shopping</h1>
+              )}
             </button>
           </Link>
           <button className="bg-blue-500 px-6 py-2 text-white rounded-lg">

@@ -20,7 +20,8 @@ export const ShopContextProvider = (props) => {
     for (const item in cartItems) {
       if (cartItems[item] > 0) {
         let itemInfo = Data.find((product) => product.id === Number(item))
-        totalAmount += cartItems[item] * parseFloat(itemInfo.price.replaceAll(",", ""))
+        totalAmount +=
+          cartItems[item] * parseFloat(itemInfo.price.replaceAll(",", ""))
       }
     }
     return totalAmount
@@ -32,6 +33,10 @@ export const ShopContextProvider = (props) => {
 
   const removeFromCart = (itemId) => {
     setCartItems((prev) => ({ ...prev, [itemId]: prev[itemId] - 1 }))
+  }
+
+  const deleteItem = (makeZero, itemId) => {
+    setCartItems((prev) => ({ ...prev, [itemId]: makeZero }))
   }
 
   const updateCartItems = (newAmount, itemId) => {
@@ -46,6 +51,7 @@ export const ShopContextProvider = (props) => {
         removeFromCart,
         updateCartItems,
         getCartTotalAmount,
+        deleteItem,
       }}
     >
       {props.children}
