@@ -2,7 +2,7 @@ import IPhone from "../assets/images/iphone.png"
 import MacBook from "../assets/images/macbook.png"
 import Airpods from "../assets/images/airpods.png"
 import Apple_watch from "../assets/images/apple_watch.png"
-import Asus from "../assets/images/asus.png"
+import HP from "../assets/images/hp_pavillion.png"
 import Logitech from "../assets/images/logitech.png"
 import Samsung_s23 from "../assets/images/samsung_s23.png"
 
@@ -37,10 +37,10 @@ export const Data = [
   },
   {
     id: 4,
-    title: "Asus GL552vw",
-    price: "99,899",
+    title: "HP Pavillion 15",
+    price: "75,899",
     category: "Laptop",
-    productImg: Asus,
+    productImg: HP,
   },
   {
     id: 5,

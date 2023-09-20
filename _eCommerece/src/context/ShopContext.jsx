@@ -15,6 +15,17 @@ const getDefaultCart = () => {
 export const ShopContextProvider = (props) => {
   const [cartItems, setCartItems] = useState(getDefaultCart())
 
+  const getCartTotalAmount = () => {
+    let totalAmount = 0
+    for (const item in cartItems) {
+      if (cartItems[item] > 0) {
+        let itemInfo = Data.find((product) => product.id === Number(item))
+        totalAmount += cartItems[item] * parseFloat(itemInfo.price.replaceAll(",", ""))
+      }
+    }
+    return totalAmount
+  }
+
   const addToCart = (itemId) => {
     setCartItems((prev) => ({ ...prev, [itemId]: prev[itemId] + 1 }))
   }
@@ -29,7 +40,13 @@ export const ShopContextProvider = (props) => {
 
   return (
     <ShopContext.Provider
-      value={{ cartItems, addToCart, removeFromCart, updateCartItems }}
+      value={{
+        cartItems,
+        addToCart,
+        removeFromCart,
+        updateCartItems,
+        getCartTotalAmount,
+      }}
     >
       {props.children}
     </ShopContext.Provider>

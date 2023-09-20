@@ -68,7 +68,7 @@ export const Navbar = () => {
         </div>
 
         <ul
-          className={`bg-blue-600 py-4 flex flex-col md:flex-row items-center gap-6 md:gap-12 absolute md:static z-auto left-0 w-full md:w-auto transition-all duration-300 ${
+          className={`bg-blue-600 py-8 lg:py-4 flex flex-col md:flex-row items-center gap-6 md:gap-12 absolute md:static z-auto left-0 w-full md:w-auto transition-all duration-300 ${
             open ? "top-16" : "top-[-490px]"
           }`}
         >
