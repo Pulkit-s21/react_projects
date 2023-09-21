@@ -1,6 +1,7 @@
+import { Data } from "../helpers/Data"
+
 /* eslint-disable react/prop-types */
 
-import { Data } from "../helpers/data"
 export const FilterBtn = ({ menuItems, filterItems, setItems }) => {
   return (
     <div className="overflow-x-scroll flex gap-6 items-center p-4">
