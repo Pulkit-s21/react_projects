@@ -1,5 +1,6 @@
 import { BlogCard } from "../components/BlogCard"
 import { Filters } from "../components/Filters"
+import { Lp1 } from "../components/lp1"
 import { Header } from "../components/Header"
 import { data } from "../helpers/data"
 import { useState } from "react"
@@ -15,6 +16,7 @@ export const Home = () => {
   return (
     <>
       <Header />
+      <Lp1 title={"Hello"}/>
       <Filters
         filterCategories={filterCategories}
         filterItems={filterItems}

@@ -2,18 +2,22 @@ import { useState } from "react"
 import { Data } from "../helpers/Data"
 
 export const Form = () => {
-  const [medicine, setMedicine] = useState()
+  let [medicine, setMedicine] = useState()
+  let [name, setName] = useState("")
   let [quantity, setQuantity] = useState(0)
   let [list, setList] = useState([])
   let [totalAmount, setTotalAmount] = useState(0)
 
   return (
     <div className="flex flex-col gap-4 p-2">
+      <input
+        type="text"
+        placeholder="Patient Name"
+        value={name}
+        onChange={(e) => setName(e.target.value)}
+        className="text-center md:text-xl p-2"
+      />
       <select name="medicine" className="p-2 text-center text-lg">
-        <option value="Please select the medicine" disabled>
-          Please select the medicine
-        </option>
-
         {Data.map((med, idx) => (
           <option
             key={idx}
@@ -100,14 +104,13 @@ export const Form = () => {
               setList((current) => [...current, order])
             }}
           >
-            {console.log(list)}
             Buy
           </button>
         </div>
       ))}
 
       <table className="border-2 text-center mx-2">
-        <tr className="border-2 divide-y-2">
+        <tr className="border-2">
           <th className="border-2 px-1 md:px-4">Medicine</th>
           <th className="border-2 px-1 md:px-4">Price / Tablet</th>
           <th className="border-2 px-1 md:px-4">Quantity</th>
@@ -133,6 +136,9 @@ export const Form = () => {
       {totalAmount != 0 && (
         <div className="flex flex-col gap-2 text-center">
           <h3 className="text-xl">
+            Patient : <span className="text-2xl font-semibold">{name}</span>
+          </h3>
+          <h3 className="text-xl">
             Total Amount :{" "}
             <span className="font-bold text-green-500 text-2xl md:text-3xl">
               &#x20b9; {totalAmount}
@@ -142,7 +148,7 @@ export const Form = () => {
             GST of <span className="font-bold text-base">8%</span> applicable
           </p>
           <h3 className="text-xl">
-            Total Amount Payable:{" "}
+            Total Amount Payable :{" "}
             <span className="font-bold text-green-500 text-2xl md:text-3xl">
               &#x20b9; {Math.floor(totalAmount + 0.08 * totalAmount)}
             </span>

@@ -77,7 +77,6 @@ export const Navbar = () => {
               <Link to={link.link}>{link.name}</Link>
             </li>
           ))}
-          {/* <NavBtn>Get Started</NavBtn> */}
         </ul>
       </div>
     </nav>

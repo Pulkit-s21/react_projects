@@ -1,6 +1,7 @@
 /* eslint-disable react/prop-types */
 import { useContext } from "react"
 import { ShopContext } from "../context/ShopContext"
+import { toast } from "react-hot-toast"
 
 export const ProductCard = ({ items }) => {
   const { addToCart, cartItems } = useContext(ShopContext)
@@ -22,6 +23,8 @@ export const ProductCard = ({ items }) => {
           <button
             onClick={() => {
               addToCart(item.id)
+              toast.success("Item added to cart")
+              // alert("Hello")
             }}
             className="rounded-md uppercase px-6 py-2 bg-blue-500 text-white group-hover:bg-green-500 transition-all duration-200"
           >

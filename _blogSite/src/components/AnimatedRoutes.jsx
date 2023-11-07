@@ -2,6 +2,7 @@ import { Routes, Route, useLocation } from "react-router-dom"
 import { Home } from "../pages/Home"
 import { BlogPage } from "../pages/BlogPage"
 
+
 export const AnimatedRoutes = () => {
   const location = useLocation()
   return (

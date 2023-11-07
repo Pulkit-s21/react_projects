@@ -1,6 +1,8 @@
 /* eslint-disable react/prop-types */
 import { useContext } from "react"
 import { ShopContext } from "../context/ShopContext"
+import { toast } from "react-hot-toast"
+
 export const CartItem = (props) => {
   const { addToCart, removeFromCart, cartItems, updateCartItems, deleteItem } =
     useContext(ShopContext)
@@ -23,6 +25,7 @@ export const CartItem = (props) => {
             <button
               onClick={() => {
                 removeFromCart(props.id)
+                toast("Item removed")
               }}
             >
               -
@@ -43,16 +46,16 @@ export const CartItem = (props) => {
               +
             </button>
           </div>
-        <div className="">
-          <button
-            className="text-base md:text-xl hover:text-red-500 transition-all"
-            onClick={(e) => {
-              deleteItem(Number((e.target.value = 0)), props.id)
-            }}
-          >
-            Remove
-          </button>
-        </div>
+          <div className="">
+            <button
+              className="text-base md:text-xl hover:text-red-500 transition-all"
+              onClick={(e) => {
+                deleteItem(Number((e.target.value = 0)), props.id)
+              }}
+            >
+              Remove
+            </button>
+          </div>
         </div>
       </div>
     </div>
