@@ -6,6 +6,7 @@ import { signOut } from "firebase/auth"
 import { auth } from "../../config/firebase-config"
 import { useNavigate } from "react-router-dom"
 import { useGetUserInfo } from "../../hooks/useGetUserInfo"
+import Swal from "sweetalert2"
 
 export const ExpenseTracker = () => {
   const navigate = useNavigate()
@@ -13,18 +14,52 @@ export const ExpenseTracker = () => {
   const { transactions, transactionTotal } = useGetTransactions()
   const { name, profilePic } = useGetUserInfo()
 
-  const [description, setDescription] = useState()
+  const [description, setDescription] = useState("")
+  const [transactionMode, setTransactionMode] = useState("")
   const [transactionAmount, setTransactionAmount] = useState(0)
   const [transactionType, setTransactionType] = useState("Expense")
 
   const onSubmit = (e) => {
     e.preventDefault()
-    addTransactions({
-      description,
-      transactionAmount,
-      transactionType,
+    Swal.fire({
+      title: "Are you sure?",
+      icon: "warning",
+      html: `
+            <div class="flex flex-col gap-4">
+                <p>
+                    A transaction of type <b>${transactionType}</b> for <b>${description}</b> of amount <b>${transactionAmount}</b>
+                </p>
+            </div>
+            `,
+      showCloseButton: true,
+      showCancelButton: true,
+      showConfirmButton: true,
+      confirmButtonColor: "#3085d6",
+      cancelButtonColor: "#d33",
+      confirmButtonText: "Yes",
+      closeButtonText: "No",
+    }).then((result) => {
+      if (result.isConfirmed) {
+        addTransactions({
+          description,
+          transactionAmount,
+          transactionMode,
+          transactionType,
+        })
+        e.target.reset()
+
+        // setDescription("");
+        // setTransactionAmount("");
+        // setTransactionMode("");
+
+        Swal.fire({
+          title: "Confirmed",
+          text: "Your transaction has been saved !!",
+          showConfirmButton: true,
+          confirmButtonColor: "#3085d6",
+        })
+      }
     })
-    e.target.reset()
   }
 
   const signUserOut = () => {
@@ -92,21 +127,43 @@ export const ExpenseTracker = () => {
           className="flex flex-col gap-4 justify-center items-center"
           onSubmit={onSubmit}
         >
-          <div className="flex flex-col gap-8 text-xl">
+          <div className="flex flex-col md:flex-row gap-6 lg:gap-8 text-xl">
             <input
-              className="p-2 rounded-lg text-center outline-none border-2 border-transparent focus:border-green-300"
+              className={`p-2 rounded-lg text-center outline-none border-2 border-transparent bg-neutral-900 ${
+                transactionType === "Expense"
+                  ? "focus:border-red-500"
+                  : "focus:border-green-500"
+              }`}
               type="text"
               name="description"
               placeholder="Description"
+              autoComplete="off"
               required
               onChange={(e) => setDescription(e.target.value)}
             />
             <input
-              className="p-2 rounded-lg text-center outline-none border-2 border-transparent focus:border-green-300"
-              type="number"
+              className={`p-2 rounded-lg text-center outline-none border-2 border-transparent bg-neutral-900 ${
+                transactionType === "Expense"
+                  ? "focus:border-red-500"
+                  : "focus:border-green-500"
+              }`}
+              type="text"
+              name="mode"
+              placeholder="Mode of transaction"
+              autoComplete="off"
+              required
+              onChange={(e) => setTransactionMode(e.target.value)}
+            />
+            <input
+              className={`p-2 rounded-lg text-center outline-none border-2 border-transparent bg-neutral-900 ${
+                transactionType === "Income"
+                  ? "focus:border-green-500"
+                  : "focus:border-red-500"
+              }`}
               min={0}
               name="amount"
               placeholder="Amount"
+              autoComplete="off"
               required
               onChange={(e) => setTransactionAmount(e.target.value)}
             />
@@ -122,7 +179,7 @@ export const ExpenseTracker = () => {
                 onChange={(e) => setTransactionType(e.target.value)}
               />
               <label
-                className="text-xl md:text-2xl lg:text-3xl ml-2 cursor-pointer transition-colors hover:text-red-500"
+                className="text-2xl md:text-3xl lg:text-4xl ml-2 cursor-pointer transition-colors hover:text-red-500"
                 htmlFor="Expense"
               >
                 Expense
@@ -138,7 +195,7 @@ export const ExpenseTracker = () => {
                 onChange={(e) => setTransactionType(e.target.value)}
               />
               <label
-                className="text-xl md:text-2xl lg:text-3xl ml-2 cursor-pointer transition-colors hover:text-green-500"
+                className="text-2xl md:text-3xl lg:text-4xl ml-2 cursor-pointer transition-colors hover:text-green-500"
                 htmlFor="Income"
               >
                 Income
@@ -146,36 +203,43 @@ export const ExpenseTracker = () => {
             </div>
           </div>
 
-          <button
-            className="bg-blue-600 text-lg text-white border-2 border-transparent hover:border-2 hover:border-blue-300"
-            type="submit"
-          >
+          <button className="bg-blue-600 text-lg text-white border-2 border-transparent hover:border-2 hover:border-blue-300">
             Add Transaction
           </button>
         </form>
       </div>
 
-      <div className="">
-        <h1 className="text-4xl text-blue-400 md:text-6xl pb-4">
+      <div className="flex flex-col gap-8">
+        <h1 className="text-4xl text-neutral-500 md:text-6xl pb-4">
           Transactions
         </h1>
-        <ul className="grid md:grid-cols-3 gap-8">
+        <ul className="grid grid-cols-3 gap-8 px-4">
           {transactions.map((transaction) => {
             return (
-              <li className="flex flex-col gap-2" key={transaction.id}>
-                <h2 className="text-2xl">{transaction.description}</h2>
-                <p className="text-3xl">
-                  &#8377;{transaction.transactionAmount} &#x2022;{" "}
-                  <label
-                    className={`${
-                      transaction.transactionType === "Expense"
-                        ? "text-red-500"
-                        : "text-green-500"
-                    } text-xl`}
-                  >
-                    {transaction.transactionType}
-                  </label>
-                </p>
+              <li key={transaction.id} className="flex flex-col gap-2">
+                <div className="flex flex-col lg:flex-row lg:gap-8 justify-between items-center bg-neutral-900 px-6 py-2 rounded-lg">
+                  <div className="grid grid-cols-2 lg:grid-cols-1 gap-2 text-start">
+                    <p className="text-xs lg:text-base text-white">
+                      {transaction?.description}
+                    </p>
+                    <p className="text-xs text-neutral-600">
+                      {transaction?.transactionMode}
+                    </p>
+                  </div>
+
+                  <div className="grid gap-4">
+                    <p
+                      className={`text-xl lg:text-3xl font-semibold ${
+                        transaction.transactionType === "Income"
+                          ? "text-green-500"
+                          : "text-red-500"
+                      }`}
+                    >
+                      <span className="text-sm text-neutral-400">&#8377;</span>
+                      {transaction.transactionAmount}
+                    </p>
+                  </div>
+                </div>
               </li>
             )
           })}
