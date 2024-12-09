@@ -1,4 +1,4 @@
-import { TechData } from "../utils/techData"
+import { TechData } from "../utils/TechData"
 import { TiltCard } from "./TiltCard"
 
 export const About = () => {
