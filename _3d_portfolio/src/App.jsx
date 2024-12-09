@@ -14,10 +14,10 @@ import {
 function App() {
   return (
     <Router>
-      <div className="relative z-0 bg-primary">
+      <div className="grid grid-cols-1 gap-4 relative z-0 bg-primary">
         <div className="bg-hero-pattern bg-cover bg-no-repeat bg-center">
-            <Navbar />
-            <Hero />
+          <Navbar />
+          <Hero />
         </div>
         <About />
         <Experience />
@@ -25,8 +25,8 @@ function App() {
         <Works />
         <Feedbacks />
         <div className="relative z-0">
-            <Contact />
-            <StarsCanvas />
+          <Contact />
+          <StarsCanvas />
         </div>
       </div>
     </Router>

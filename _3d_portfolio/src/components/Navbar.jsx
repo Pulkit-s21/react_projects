@@ -16,13 +16,14 @@ export const Navbar = () => {
           className="flex items-center gap-2"
           to="/"
           onClick={() => {
-            setToggle(!toggle)
             setActive("")
             window.scrollTo(0, 0)
           }}
         >
           <img className="w-9 h-9 object-contain" src={logo} alt="logo" />
-          <p className="text-white font-semibold cursor-pointer text-sm">Pulkit</p>
+          <p className="text-white font-semibold cursor-pointer text-sm">
+            Pulkit
+          </p>
         </Link>
 
         {/* Desktop links */}
