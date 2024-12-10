@@ -8,7 +8,7 @@ export const Navbar = () => {
   const [toggle, setToggle] = useState(false)
   return (
     <nav
-      className={`w-full flex items-center px-6 py-5 fixed top-0 z-20 bg-primary`}
+      className={`w-full flex items-center px-6 py-5 fixed top-0 z-[999] bg-primary`}
     >
       <div className="w-full flex justify-between items-center mx-auto">
         {/* Logo */}

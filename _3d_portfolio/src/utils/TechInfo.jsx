@@ -2,12 +2,12 @@ import react from "../assets/icons/react.svg"
 import nodejs from "../assets/icons/nodejs.svg"
 import express from "../assets/icons/express.svg"
 import mysql from "../assets/icons/mysql.svg"
-import threejs from "../assets/icons/threejs.svg"
+import threejs from "../assets/icons/threeJS.svg"
 import tailwind from "../assets/icons/tailwind.svg"
 import html from "../assets/icons/html.svg"
 import figma from "../assets/icons/figma.svg"
 
-export const TechData = [
+export const TechInfo = [
   {
     icon: react,
     title: "React",
@@ -22,7 +22,7 @@ export const TechData = [
   },
   {
     icon: express,
-    title: "Express",
+    title: "Express JS",
   },
   {
     icon: tailwind,

@@ -43,6 +43,7 @@ export const TiltCard = ({ title, icon }) => {
     y.set(0)
   }
 
+  // TODO: Change the tech cards to be cards about myself
   return (
     <motion.div
       ref={ref}
