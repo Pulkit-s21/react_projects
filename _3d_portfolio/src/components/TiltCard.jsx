@@ -43,7 +43,6 @@ export const TiltCard = ({ title, icon }) => {
     y.set(0)
   }
 
-  // TODO: Change the tech cards to be cards about myself
   return (
     <motion.div
       ref={ref}
@@ -53,7 +52,7 @@ export const TiltCard = ({ title, icon }) => {
         transformStyle: "preserve-3d",
         transform,
       }}
-      className="relative h-44 w-40 md:h-52 md:w-48 lg:h-52 lg:w-48 rounded-xl violet-gradient"
+      className="relative h-52 w-40 md:h-56 md:w-44 lg:h-64 lg:w-52 rounded-xl violet-gradient"
     >
       <div
         style={{
@@ -66,9 +65,9 @@ export const TiltCard = ({ title, icon }) => {
           style={{
             transform: "translateZ(50px)",
           }}
-          className="text-center text-lg md:text-xl lg:text-2xl text-violet-400 flex flex-col items-center"
+          className="text-center text-sm lg:text-lg text-violet-400 flex flex-col lg:gap-4 px-1 items-center"
         >
-          <img className="h-12 md:h-20 lg:h-24" src={icon} alt={title} />
+          <img className="h-14" src={icon} alt={title} />
           {title}
         </p>
       </div>

@@ -9,6 +9,9 @@ export const ExperienceCard = ({ exp }) => {
       iconStyle={{ background: exp.iconStyle }}
       icon={
         <div className="flex items-center justify-center w-full h-full">
+          {/*
+          //TODO: Change company icons
+             */}
           <img
             src={exp.icon}
             alt={exp.company_name}

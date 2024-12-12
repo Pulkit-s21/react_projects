@@ -4,17 +4,17 @@ import {
   creator,
   web,
   javascript,
-  typescript,
+  // typescript,
   html,
   css,
   reactjs,
-  redux,
+  // redux,
   tailwind,
   nodejs,
   mongodb,
   git,
   figma,
-  docker,
+  // docker,
   meta,
   starbucks,
   tesla,
@@ -22,8 +22,11 @@ import {
   carrent,
   jobit,
   tripguide,
-  threejs,
 } from "../assets"
+
+import express from "../assets/icons/express.svg"
+import mysql from "../assets/icons/mysql.svg"
+import react from "../assets/icons/react.svg"
 
 export const navLinks = [
   {
@@ -40,23 +43,26 @@ export const navLinks = [
   },
 ]
 
-// TODO: Change services
 const services = [
   {
     title: "Web Developer",
     icon: web,
   },
   {
-    title: "React Native Developer",
+    title: "Beginner React Native Developer",
     icon: mobile,
   },
   {
-    title: "Backend Developer",
+    title: "Beginner Backend Developer",
     icon: backend,
   },
   {
-    title: "Content Creator",
+    title: "Figma Designer",
     icon: creator,
+  },
+  {
+    title: "MERN Stack Developer",
+    icon: react,
   },
 ]
 
@@ -74,17 +80,25 @@ const technologies = [
     icon: javascript,
   },
   {
-    name: "TypeScript",
-    icon: typescript,
+    name: "MySql",
+    icon: mysql,
   },
+  {
+    name: "Express",
+    icon: express,
+  },
+  //   {
+  //     name: "TypeScript",
+  //     icon: typescript,
+  //   },
   {
     name: "React JS",
     icon: reactjs,
   },
-  {
-    name: "Redux Toolkit",
-    icon: redux,
-  },
+  //   {
+  //     name: "Redux Toolkit",
+  //     icon: redux,
+  //   },
   {
     name: "Tailwind CSS",
     icon: tailwind,
@@ -97,10 +111,10 @@ const technologies = [
     name: "MongoDB",
     icon: mongodb,
   },
-  {
-    name: "Three JS",
-    icon: threejs,
-  },
+  //   {
+  //     name: "Three JS",
+  //     icon: threeJS,
+  //   },
   {
     name: "git",
     icon: git,
@@ -109,64 +123,76 @@ const technologies = [
     name: "figma",
     icon: figma,
   },
-  {
-    name: "docker",
-    icon: docker,
-  },
+  //   {
+  //     name: "docker",
+  //     icon: docker,
+  //   },
 ]
 
-//TODO: Change the exp
 const experiences = [
   {
-    title: "React.js Developer",
-    company_name: "Starbucks",
+    title: "BCA Student",
+    company_name: "Chitkara University",
     icon: starbucks,
     iconBg: "#383E56",
-    date: "March 2020 - April 2021",
+    date: "Aug 2019 - June 2022",
     points: [
-      "Developing and maintaining web applications using React.js and other related technologies.",
-      "Collaborating with cross-functional teams including designers, product managers, and other developers to create high-quality products.",
-      "Implementing responsive design and ensuring cross-browser compatibility.",
-      "Participating in code reviews and providing constructive feedback to other developers.",
+      "Develop strong coding skills in languages like Python, Java, or C++.",
+      "Learned the basics of computer programming.",
+      "Introduced to how networking works.",
+      "Took small steps everyday from C to C++.",
     ],
   },
   {
-    title: "React Native Developer",
-    company_name: "Tesla",
+    title: "Started self-learning web development",
+    company_name: "Youtube",
     icon: tesla,
     iconBg: "#E6DEDD",
-    date: "Jan 2021 - Feb 2022",
+    date: "June 2022 - Present",
     points: [
-      "Developing and maintaining web applications using React.js and other related technologies.",
-      "Collaborating with cross-functional teams including designers, product managers, and other developers to create high-quality products.",
-      "Implementing responsive design and ensuring cross-browser compatibility.",
-      "Participating in code reviews and providing constructive feedback to other developers.",
+      "Got a taste of web development and fell in love with it.",
+      "Mastered HTML, CSS first as part of only frotnend.",
+      "Mastered JS to make my projects dynamic.",
+      "After practicing alot of projects from FrontEnd-Mentor, started React with TailwindCSS.",
+      "Learning new technologies and ways to make my projects better everyday.",
     ],
   },
   {
-    title: "Web Developer",
-    company_name: "Shopify",
+    title: "MCA Student",
+    company_name: "Chitkara University",
+    icon: tesla,
+    iconBg: "#E6DEDD",
+    date: "June 2022 - July 2024",
+    points: [
+      "Master languages like Java, Python for complex applications.",
+      "Got the chance to learn about Salesforce and how to work with it.",
+    ],
+  },
+  {
+    title: "MERN Internship",
+    company_name: "Calidig Solutions",
     icon: shopify,
     iconBg: "#383E56",
-    date: "Jan 2022 - Jan 2023",
+    date: "Feb 2024 - Aug 2024",
     points: [
-      "Developing and maintaining web applications using React.js and other related technologies.",
-      "Collaborating with cross-functional teams including designers, product managers, and other developers to create high-quality products.",
-      "Implementing responsive design and ensuring cross-browser compatibility.",
-      "Participating in code reviews and providing constructive feedback to other developers.",
+      "Got introduced to real-world projects as my first project.",
+      "Had great team members who taught me how the project works and what my role will be with patience.",
+      "Completed my first task after 3 days of understanding code structure.",
+      "Worked on frontend, backend and database as my tasks.",
+      "Quickly learnt the frontend part and got mastery of it.",
     ],
   },
   {
-    title: "Full stack Developer",
-    company_name: "Meta",
+    title: "Software Developer",
+    company_name: "Calidig Solutions LLP",
     icon: meta,
     iconBg: "#E6DEDD",
-    date: "Jan 2023 - Present",
+    date: "Aug 2024 - Present",
     points: [
-      "Developing and maintaining web applications using React.js and other related technologies.",
-      "Collaborating with cross-functional teams including designers, product managers, and other developers to create high-quality products.",
-      "Implementing responsive design and ensuring cross-browser compatibility.",
-      "Participating in code reviews and providing constructive feedback to other developers.",
+      "Got confirmed as a permament member of team. Got more tasks and responsibilities in the project",
+      "Practicipated and helped in more projects to learn.",
+      "Got a chance to work on a Typescript project.",
+      "Got the chance to show my dwg -> svg conversion in figma skills as part of my new daily task in project.",
     ],
   },
 ]

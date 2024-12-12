@@ -1,5 +1,5 @@
 import { motion } from "framer-motion"
-import { TechInfo } from "../utils/TechInfo"
+import { services } from "../constants/index"
 import { TiltCard } from "./TiltCard"
 
 export const About = () => {
@@ -21,7 +21,7 @@ export const About = () => {
   }
 
   return (
-    <section className="w-full mx-auto">
+    <section className="w-full mx-auto pb-12">
       <div className="grid grid-cols-1 mx-auto gap-5 px-4 max-w-screen-2xl">
         {/* text div */}
         <motion.div
@@ -58,11 +58,16 @@ export const About = () => {
         </motion.div>
 
         {/* cards div */}
-        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 place-items-center gap-4">
-          {TechInfo.map((tech, idx) => {
-            return <TiltCard key={idx} icon={tech.icon} title={tech.title} />
+        <motion.div
+          variants={container}
+          className="grid grid-cols-2 md:grid-cols-3 place-items-center gap-4"
+        >
+          {services.map((service, idx) => {
+            return (
+              <TiltCard key={idx} icon={service.icon} title={service.title} />
+            )
           })}
-        </div>
+        </motion.div>
       </div>
     </section>
   )
