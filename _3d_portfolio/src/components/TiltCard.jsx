@@ -9,7 +9,7 @@ import { useRef } from "react"
 const ROTATION_RANGE = 30.5
 const HALF_ROTATION_RANGE = ROTATION_RANGE / 2
 
-export const TiltCard = ({ title, icon }) => {
+const TiltCard = ({ title, icon }) => {
   const ref = useRef(null)
 
   const x = useMotionValue(0)
@@ -52,7 +52,7 @@ export const TiltCard = ({ title, icon }) => {
         transformStyle: "preserve-3d",
         transform,
       }}
-      className="relative h-52 w-40 md:h-56 md:w-44 lg:h-64 lg:w-52 rounded-xl violet-gradient"
+      className="relative h-52 w-40 md:h-56 md:w-52 lg:h-64 lg:w-60 rounded-xl violet-gradient"
     >
       <div
         style={{
@@ -74,3 +74,5 @@ export const TiltCard = ({ title, icon }) => {
     </motion.div>
   )
 }
+
+export default TiltCard

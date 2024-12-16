@@ -1,6 +1,8 @@
 import { motion } from "framer-motion"
-import { services } from "../constants/index"
-import { TiltCard } from "./TiltCard"
+import { services } from "../constants"
+import { lazy } from "react"
+
+const TiltCard = lazy(() => import("./TiltCard"))
 
 export const About = () => {
   const container = {
@@ -21,7 +23,7 @@ export const About = () => {
   }
 
   return (
-    <section className="w-full mx-auto pb-12">
+    <section id="about" className="w-full mx-auto pb-12">
       <div className="grid grid-cols-1 mx-auto gap-5 px-4 max-w-screen-2xl">
         {/* text div */}
         <motion.div

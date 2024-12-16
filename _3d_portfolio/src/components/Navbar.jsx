@@ -30,17 +30,17 @@ export const Navbar = () => {
         <ul className="list-none hidden sm:flex flex-row gap-10">
           {navLinks.map((link) => (
             <li key={link.id}>
-              <Link
+              <a
                 onClick={() => {
                   setActive(link.title)
                 }}
-                to={`#${link.id}`}
+                href={`#${link.id}`}
                 className={`font-medium cursor-pointer hover:text-white text-base transition-all duration-200 ${
                   active === link.title ? "text-white" : "text-secondary"
                 }`}
               >
                 {link.title}
-              </Link>
+              </a>
             </li>
           ))}
         </ul>
@@ -61,18 +61,18 @@ export const Navbar = () => {
             <ul className="list-none flex flex-col justify-end items-start gap-4">
               {navLinks.map((link) => (
                 <li key={link.id}>
-                  <Link
+                  <a
                     onClick={() => {
                       setToggle(!toggle)
                       setActive(link.title)
                     }}
-                    to={`#${link.id}`}
+                    href={`#${link.id}`}
                     className={`font-medium cursor-pointer hover:text-white text-base transition-all duration-200 ${
                       active === link.title ? "text-white" : "text-secondary"
                     }`}
                   >
                     {link.title}
-                  </Link>
+                  </a>
                 </li>
               ))}
             </ul>

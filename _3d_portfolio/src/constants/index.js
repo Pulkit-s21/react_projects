@@ -4,29 +4,26 @@ import {
   creator,
   web,
   javascript,
-  // typescript,
   html,
   css,
   reactjs,
-  // redux,
   tailwind,
   nodejs,
   mongodb,
   git,
   figma,
-  // docker,
   meta,
   starbucks,
   tesla,
   shopify,
-  carrent,
-  jobit,
-  tripguide,
 } from "../assets"
 
 import express from "../assets/icons/express.svg"
 import mysql from "../assets/icons/mysql.svg"
 import react from "../assets/icons/react.svg"
+import bhaargav from "../assets/bhaargav.png"
+import srConst from "../assets/srConst.png"
+import expenseTracker from "../assets/expenseTracker.png"
 
 export const navLinks = [
   {
@@ -224,70 +221,109 @@ const testimonials = [
   },
 ]
 
-//TODO: Change projects and make card like hover.dev
 const projects = [
   {
-    name: "Car Rent",
+    name: "Bhaargav Finco",
     description:
-      "Web-based platform that allows users to search, book, and manage car rentals from various providers, providing a convenient and efficient solution for transportation needs.",
+      "First freelance project for client. Website for a money lender with option of booking an appointment throuh whatsapp message or an email direct from website. Map with leaflet js to show the location of client.",
+    tags: [
+      {
+        name: "react js",
+        color: "blue-text-gradient",
+      },
+      {
+        name: "framer motion",
+        color: "green-text-gradient",
+      },
+      {
+        name: "leaflet js",
+        color: "text-orange-500",
+      },
+      {
+        name: "tailwindcss",
+        color: "pink-text-gradient",
+      },
+      {
+        name: "swiper js",
+        color: "blue-text-gradient",
+      },
+      {
+        name: "sweet alert 2",
+        color: "text-yellow-500",
+      },
+    ],
+    image: bhaargav,
+    live: "https://www.bhaargavfinco.com/",
+    github: "https://github.com/Pulkit-s21/Bhaargav-FInco",
+  },
+  {
+    name: "S.R. Constructions",
+    description:
+      "Freelance project for client. Construction company that wanted some fancy animations and list of all their services. User can book an appointment through email from website. EmailJs is used to send email to the client. Leaflet js to display map with clients address",
     tags: [
       {
         name: "react",
         color: "blue-text-gradient",
       },
       {
-        name: "mongodb",
+        name: "emailjs",
         color: "green-text-gradient",
       },
       {
-        name: "tailwind",
+        name: "tailwindcss",
         color: "pink-text-gradient",
       },
-    ],
-    image: carrent,
-    source_code_link: "https://github.com/",
-  },
-  {
-    name: "Job IT",
-    description:
-      "Web application that enables users to search for job openings, view estimated salary ranges for positions, and locate available jobs based on their current location.",
-    tags: [
       {
-        name: "react",
+        name: "framer motion",
+        color: "text-orange-500",
+      },
+      {
+        name: "leaflet js",
+        color: "text-blue-500",
+      },
+      {
+        name: "swiper js",
         color: "blue-text-gradient",
       },
       {
-        name: "restapi",
-        color: "green-text-gradient",
-      },
-      {
-        name: "scss",
-        color: "pink-text-gradient",
+        name: "sweet alert 2",
+        color: "text-yellow-500",
       },
     ],
-    image: jobit,
-    source_code_link: "https://github.com/",
+    image: srConst,
+    live: "https://lakshay-constructions.vercel.app/",
+    github: "https://github.com/Pulkit-s21/Lakshay-Constructions",
   },
   {
-    name: "Trip Guide",
+    name: "Expense Tracker",
     description:
-      "A comprehensive travel booking platform that allows users to book flights, hotels, and rental cars, and offers curated recommendations for popular destinations.",
+      "User can track their expense by entering description, amount and mode of transaction. Login is through google authenicator from firebase. Firebase lets user save their record for next use. ",
     tags: [
       {
-        name: "nextjs",
+        name: "firebase",
         color: "blue-text-gradient",
       },
       {
-        name: "supabase",
+        name: "sweet alert 2",
+        color: "text-yellow-500",
+      },
+      {
+        name: "react router dom",
         color: "green-text-gradient",
       },
       {
-        name: "css",
+        name: "tailwindcss",
         color: "pink-text-gradient",
       },
+      {
+        name: "react js",
+        color: "blue-text-gradient",
+      },
     ],
-    image: tripguide,
-    source_code_link: "https://github.com/",
+    image: expenseTracker,
+    live: "https://expense-tracker-ec75b7.netlify.app",
+    github:
+      "https://github.com/Pulkit-s21/react_projects/tree/main/_expenseTracker",
   },
 ]
 
